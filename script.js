@@ -15,6 +15,7 @@ document.getElementById("add").disabled = true;
 
 function validateRoll(){
     var roll = document.getElementById('roll').value;
+    var name = document.getElementById('name').value;
 
     if(roll.length == 0){
         rollError.innerHTML = 'Roll no is required';
@@ -41,51 +42,42 @@ function validateRoll(){
         return false;
     }
     rollError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    document.getElementById("name").disabled = false;
     return true;
 
 }
 
 
-/*function f1(){
-   
-    if(!validateRoll()){
-        document.getElementById("name").disabled = true;
-    }
-    if(validateRoll()) {
-        document.getElementById("name").disabled = false;
-    }
-
-}*/
-
 
 function validateName(){
     var name = document.getElementById('name').value;
+    if(!validateRoll()){
 
-if(!validateRoll()){
-
-//document.getElementById('name').style.color = 'transparent';
-   //document.getElementById('name').style.text ='none';
-   //document.getElementById('name').style.visibility = "hidden";
+        //document.getElementById('name').style.color = 'transparent';
+           //document.getElementById('name').style.display ='none';
+           //document.getElementById('name').style.visibility = "hidden";
+            
+            nameError.innerHTML = 'fill roll first';
+          return false;
+        }
+/*
+        if(validateRoll()){
     
-    nameError.innerHTML = 'fill roll first';
-  return false;
-}
-
- if(validateRoll()){
-    document.getElementById("name").disabled = false;
+            document.getElementById("name").disabled = false;
+        }
+ */
     if(name.length == 0){
         nameError.innerHTML = 'Name is required';
         return false;
     }
     if(!name.match(/^[a-zA-Z]+[A-Za-z|.|  ]*$/)){
-        nameError.innerHTML = 'Use valid characters';
+        nameError.innerHTML = 'Use valid alphabets';
         return  false;
     }
     nameError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    document.getElementById("add").disabled = false;
     return true;
  }
-}
-
 
 
 function validateAdd(){
@@ -104,7 +96,7 @@ var add = document.getElementById('add').value;
     }
     else {
 
-       document.getElementById("add").disabled = false;
+       //document.getElementById("add").disabled = false;
     
     var required = 15;
     var left = required - add.length;
