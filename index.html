@@ -37,25 +37,25 @@
 <br><br>
         <section>
             <div class="container">
-        <form id="form"  method="post" class="form">
+        <form id="form"  method="post" class="form" spellcheck="false">
             
             <!--div class = "user-info"-->
                 <div class="input-box">
                 <label for="roll"> Roll no: </label>
-                <input type = "text" id = "roll" name="roll" placeholder="Enter 3-digit roll number" onkeyup="validateRoll()" maxlength="3" min="001" max="999" required >
+                <input type = "text" id = "roll" name="roll"  class="input-field" placeholder="Enter 3-digit roll number" onkeyup="validateRoll()" maxlength="3" min="001" max="999" required >
                     <span id="roll-error"></span>
             </div>
                 <br>
                 <div class="input-box">
                 <label for="name">Full Name: </label>
-                <input type="text" id="name" name="name" onkeyup="validateName()" placeholder="Enter full name" maxlength="20" required>
+                <input type="text" id="name" name="name" class="input-field" onkeyup="validateName()" placeholder="Enter full name" maxlength="20" required>
                 <span id="name-error"></span>
 
             </div>
             <br>
             <div class="input-box">
                 <label for="add">Address: </label>
-                <input type="text" id="add" name="add" onkeyup="validateAdd()" placeholder="Enter current address" maxlength="30" required>
+                <input type="text" id="add" name="add" onkeyup="validateAdd()" class="input-field" placeholder="Enter current address" maxlength="30" required>
                 <span id="add-error"></span>
             </div>
                 <br><br>
